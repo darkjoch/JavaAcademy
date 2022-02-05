@@ -15,10 +15,16 @@ public class App {
         System.out.println("Please write a color: Green or Blue");
         choice = in.nextLine();
 
+        //Una forma de ocultar la logica del builder es que en vez de el metodo setColor podrías tener directamente el método withGreenColor
+        //y withBlueColor y asi el builder se encarga de hacer set del enum correspondiente. De esta manera quedan ocultos los enums para la clase App (el cliente)
+        //lo mismo para el storage y batteryLife
         if(choice.equals("Green"))
             builder.setColor(Color.GREEN);
+        //builder.withGreenColor();
+        
         else if (choice.equals("Blue"))
             builder.setColor(Color.BLUE);
+        //builder.withBlueColor();
         else
             System.out.println("That color is not available");
 
